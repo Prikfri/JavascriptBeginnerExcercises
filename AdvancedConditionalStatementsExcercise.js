@@ -31,6 +31,7 @@
 }
 dayOfTheWeek(1)*/
 
+
 function workingDayOrWeekend(day) {
     switch (day[0]) {
         case "Monday":
@@ -92,6 +93,7 @@ function addressingPeople(parameters) {
 }
 //addressingPeople([18, "m"]);
 
+
 function hoodShop(arrayOfParameters) {
 
     let product = arrayOfParameters[0];
@@ -132,7 +134,87 @@ function hoodShop(arrayOfParameters) {
     result *= quantity;
     console.log(result);
 }
-hoodShop(["sweets","Sofia", "2.23"])
+//hoodShop(["sweets","Sofia", "2.23"])
 
 
+function numberInInterval(number) {
+    if (number[0] >= -100 && number[0] <= 100 && number[0] != 0) {
+        console.log("Yes");
+    } else
+        console.log("No");
+}
+//numberInInterval([10]);
 
+
+function workTime(arrayOfParameters) {
+    let hour = parseInt(arrayOfParameters[0]);
+    let day = arrayOfParameters[1];
+    let dayOfWeek = function (day) {
+        return ["Monday", "Tuesday", "Wednesday", "Thursday",
+            "Friday", "Saturday", "Sunday"].indexOf(day);
+
+    }
+    if (hour >= 10 && hour <= 18 &&
+        dayOfWeek(day) >= 0 && dayOfWeek(day) <= 5) {
+        console.log("open");
+
+    } else if (hour < 10 || hour > 18 ||
+        dayOfWeek(day) == 6) {
+
+        console.log("closed");
+    }
+
+
+}
+//workTime(["19","Friday"])
+
+
+function ticketForCinema(dayOfWeek) {
+    let day = dayOfWeek[0];
+
+    switch (day) {
+        case "Monday":
+        case "Tuesday":
+        case "Friday":
+            console.log("12");
+            break;
+        case "Wednesday":
+        case "Thursday":
+            console.log("14");
+            break;
+        case "Saturday":
+        case "Sunday":
+            console.log("16");
+            break;
+        default:
+            console.log("That is not day of the week");
+            break;
+    }
+}
+//ticketForCinema(["Monday"]);
+
+
+function fruitOrVegetable(params) {
+    let frOrVeg = params[0];
+    let fruits = ["banana", "apple", "kiwi", "cherry", "lemon", "grapes"];
+    let vegetables = ["tomato", "cucumber", "pepper", "carrot"];
+    if (fruits.includes(frOrVeg)) {
+        console.log("fruit");
+
+    } else if (vegetables.includes(frOrVeg)) {
+        console.log("vegetable");
+    } else {
+        console.log("unknown");
+    }
+}
+//fruitOrVegetable(["tomato"]);
+
+
+function invalidNumber(params) {
+    let validOrInvalidNumber = parseInt(params[0]);
+    if (validOrInvalidNumber >= 100 && validOrInvalidNumber <= 200 || validOrInvalidNumber=="0") {
+    } else {
+        console.log("invalid");
+    }
+}
+//invalidNumber(["0"]);
