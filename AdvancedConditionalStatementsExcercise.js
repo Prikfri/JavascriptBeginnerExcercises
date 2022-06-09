@@ -1,4 +1,4 @@
-/*function dayOfTheWeek(number) {
+function dayOfTheWeek(number) {
 
     switch (parseInt (number)) {
         case 1:
@@ -29,7 +29,7 @@
             break;
     }
 }
-dayOfTheWeek(1)*/
+//dayOfTheWeek(1)
 
 
 function workingDayOrWeekend(day) {
