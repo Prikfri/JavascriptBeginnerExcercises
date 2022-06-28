@@ -1,6 +1,6 @@
 function dayOfTheWeek(number) {
 
-    switch (parseInt (number)) {
+    switch (parseInt(number)) {
         case 1:
             console.log("Monday");
             break;
@@ -22,10 +22,8 @@ function dayOfTheWeek(number) {
         case 7:
             console.log("Sunday");
             break;
-
         default:
             console.log("Error");
-
             break;
     }
 }
@@ -33,45 +31,46 @@ function dayOfTheWeek(number) {
 
 
 function workingDayOrWeekend(day) {
+    let result;
     switch (day[0]) {
         case "Monday":
         case "Tuesday":
         case "Wednesday":
         case "Thursday":
         case "Friday":
-            console.log("Working day");
+            result = "Working day";
             break;
-
         case 'Saturday':
         case 'Sunday':
-            console.log("Weekend");
+            result = "Weekend";
             break;
-
         default:
-            console.log("Error");
+            result = "Error";
             break;
     }
+    console.log(result);
 }
 //workingDayOrWeekend('Tuesday');
 
 
 function animalType(animal) {
+    let result;
     switch (animal[0]) {
         case "dog":
-            console.log("mammal");
+            result = "mammal";
             break;
         case "crocodile":
         case "tortoise":
         case "snake":
-            console.log("reptile");
+            result = "reptile";
             break
         default:
-            console.log("unknown");
-
+            result = "unknown";
             break;
     }
+    console.log(result);
 }
-//animalType(dog);
+//animalType(["dog"]);
 
 
 function addressingPeople(parameters) {
@@ -82,7 +81,6 @@ function addressingPeople(parameters) {
             console.log("Master");
         } else
             console.log("Mr.");
-
     } else if (gender === "f") {
         if (age < 16) {
             console.log("Miss");
@@ -110,7 +108,6 @@ function hoodShop(arrayOfParameters) {
             "peanuts": 1.60
         }
         result += productsInSofia[product];
-
     } else if (town === 'Plovdiv') {
         let productsInPlovdiv = {
             "coffee": 0.40,
@@ -129,7 +126,6 @@ function hoodShop(arrayOfParameters) {
             "peanuts": 1.55
         }
         result += productsInVarna[product];
-
     }
     result *= quantity;
     console.log(result);
@@ -152,19 +148,16 @@ function workTime(arrayOfParameters) {
     let dayOfWeek = function (day) {
         return ["Monday", "Tuesday", "Wednesday", "Thursday",
             "Friday", "Saturday", "Sunday"].indexOf(day);
-
     }
-    if (hour >= 10 && hour <= 18 &&
-        dayOfWeek(day) >= 0 && dayOfWeek(day) <= 5) {
+
+    if (hour >= 10 &&
+        hour <= 18 &&
+        dayOfWeek(day) >= 0 &&
+        dayOfWeek(day) <= 5) {
         console.log("open");
-
-    } else if (hour < 10 || hour > 18 ||
-        dayOfWeek(day) == 6) {
-
+    } else if (hour < 10 || hour > 18 || dayOfWeek(day) == 6) {
         console.log("closed");
     }
-
-
 }
 //workTime(["19","Friday"])
 
@@ -198,9 +191,9 @@ function fruitOrVegetable(params) {
     let frOrVeg = params[0];
     let fruits = ["banana", "apple", "kiwi", "cherry", "lemon", "grapes"];
     let vegetables = ["tomato", "cucumber", "pepper", "carrot"];
+
     if (fruits.includes(frOrVeg)) {
         console.log("fruit");
-
     } else if (vegetables.includes(frOrVeg)) {
         console.log("vegetable");
     } else {
@@ -212,8 +205,7 @@ function fruitOrVegetable(params) {
 
 function invalidNumber(params) {
     let validOrInvalidNumber = parseInt(params[0]);
-    if (validOrInvalidNumber >= 100 && validOrInvalidNumber <= 200 || validOrInvalidNumber=="0") {
-    } else {
+    if ((validOrInvalidNumber <= 100 || validOrInvalidNumber >= 200) && validOrInvalidNumber !== 0) {
         console.log("invalid");
     }
 }

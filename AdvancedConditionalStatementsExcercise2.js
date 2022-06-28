@@ -2,7 +2,8 @@ function cinema(arrayOfParameters) {
     let typeOfProjection = arrayOfParameters[0];
     let rows = arrayOfParameters[1];
     let columns = arrayOfParameters[2];
-    let profitFromProjection = rows * columns
+    let profitFromProjection = rows * columns;
+
     if (typeOfProjection === "Premiere") {
         profitFromProjection = (profitFromProjection *= 12).toFixed(2);
     } else if (typeOfProjection === "Normal") {
@@ -10,18 +11,19 @@ function cinema(arrayOfParameters) {
     } else if (typeOfProjection === "Discount") {
         profitFromProjection = (profitFromProjection *= 5).toFixed(2);
     } else {
-        console.log("We do not have that type of projection.")
+        console.log("We do not have that type of projection.");
+        return;
     }
-    console.log(profitFromProjection)
+
+    console.log(profitFromProjection);
 }
-//cinema(["Normal","21","13"])
+//cinema(["Normal","21","13"]);
 
 
 function summerClothing(arrayOfParameters) {
     let degrees = parseInt(arrayOfParameters[0]);
     let partOfDay = arrayOfParameters[1];
-    let outfit;
-    let shoes;
+    let outfit, shoes;
     if (degrees >= 10 && degrees <= 18) {
         if (partOfDay == "Morning") {
             outfit = "Sweatshirt";
@@ -86,6 +88,7 @@ function flowersForNewHome(arrayOfParameters) {
     }
 
     budget = (budget - necessaryMoney).toFixed(2);
+    
     if (budget >= 0) {
         console.log(`Hey, you have a great garden with ${numberOfFlowers} ${typeOfFlower} and ${budget} leva left.`)
     } else if (budget < 0) {
