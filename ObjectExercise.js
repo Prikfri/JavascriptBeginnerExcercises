@@ -403,14 +403,7 @@ function catalogue(arrayOfCatalogueProducts) {
 
 function catalogueWithObjects(arrayOfCatalogueProducts) {
 
-    function capitalizeAndSort(arrayOfCatalogueProducts) {
-        return arrayOfCatalogueProducts.map(productNameAndPrice => {
-            return productNameAndPrice.charAt(0).toUpperCase() + productNameAndPrice.substring(1).toLowerCase();
-        }).sort();
 
-    }
-
-    // arrayOfCatalogueProducts = capitalizeAndSort(arrayOfCatalogueProducts);
     arrayOfCatalogueProducts.sort(function (a, b) {
         return a.toLowerCase().localeCompare(b.toLowerCase());
     });
@@ -438,7 +431,7 @@ function catalogueWithObjects(arrayOfCatalogueProducts) {
         catalogue[headingLetter].push(currentProduct);
 
     }
-    //console.log(catalogue);
+
     for (const key in catalogue) {
         if (Object.hasOwnProperty.call(catalogue, key)) {
             const arrayOfProducts = catalogue[key];
